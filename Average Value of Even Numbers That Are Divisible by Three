@@ -1,0 +1,25 @@
+leetcode 2455
+
+class Solution {
+    public int averageValue(int[] nums) {
+        int sum=0;
+        int count=0;
+        for (int i=0;i<nums.length;i++){
+            if(divisible(nums[i])){
+                sum+=nums[i];
+                count++;
+            }
+        }
+        if(count==0){
+          return 0;
+        }
+        return sum/count;
+    }
+    boolean divisible(int  n){
+        if((n%3==0)&&(n%2==0)){
+            return true;
+        }
+        return false;
+    }
+    
+}
